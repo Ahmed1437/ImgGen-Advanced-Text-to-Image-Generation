@@ -13,6 +13,10 @@ This project is a **Streamlit** web application that generates images from text 
   - **Number of images** to generate
 - Images are saved locally and logged in MLflow for experiment tracking.
 
+## Model Used
+
+The application uses the **StabilityAI SDXL Turbo** model provided through the **DeepInfra API**. This model is designed for fast and high-quality text-to-image generation. It leverages advanced diffusion models to generate detailed and accurate images based on the provided text prompt. The SDXL Turbo model is optimized for performance and speed, making it suitable for generating multiple images in a short time.
+
 ## Installation
 
 1. **Clone the Repository**:
