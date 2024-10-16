@@ -5,10 +5,14 @@ from io import BytesIO
 import os
 import base64
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Function to generate image(s)
 def generate_images(prompt, width=1024, height=1024, steps=5, guidance_scale=1.0, num_images=1):
-    DEEPINFRA_TOKEN = "your-api-token-here"
+    DEEPINFRA_TOKEN = os.getenv("DEEPINFRA_TOKEN")  # Load token from .env
     API_URL = "https://api.deepinfra.com/v1/inference/stabilityai/sdxl-turbo"
     HEADERS = {
         "Content-Type": "application/json",
