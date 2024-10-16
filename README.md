@@ -12,6 +12,7 @@ This project is a **Streamlit** web application that generates images from text 
   - **Guidance scale** (controls adherence to the prompt)
   - **Number of images** to generate
 - Images are saved locally and logged in MLflow for experiment tracking.
+- **API token is securely managed** using a `.env` file.
 
 ## Model Used
 
@@ -31,13 +32,19 @@ The application uses the **StabilityAI SDXL Turbo** model provided through the *
    pip install -r requirements.txt
    ```
 
-3. **Run the Application**:
+3. **Configure API Token**:
+   Create a `.env` file in the project directory with the following content:
+   ```bash
+   DEEPINFRA_TOKEN=your-api-token-here
+   ```
+
+4. **Run the Application**:
    Launch the Streamlit app.
    ```bash
    streamlit run app.py
    ```
 
-4. **MLflow UI**:
+5. **MLflow UI**:
    Start the MLflow UI to view your experiment logs.
    ```bash
    mlflow ui
@@ -55,6 +62,7 @@ The application uses the **StabilityAI SDXL Turbo** model provided through the *
 ├── /utils/                # Utility functions
 │   └── image_utils.py     # Image generation logic
 │
+├── .env                   # Environment variables (API token)
 ├── app.py                 # Main Streamlit application
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
@@ -62,9 +70,11 @@ The application uses the **StabilityAI SDXL Turbo** model provided through the *
 
 ## API Configuration
 
-The application uses **DeepInfra API** for image generation. You need a valid **DeepInfra API token** to use the service. Update the API token in the `image_utils.py` file:
-```python
-DEEPINFRA_TOKEN = "your-api-token-here"
+The application uses the **DeepInfra API** for image generation. You need a valid **DeepInfra API token** to use the service. The token is stored securely in a `.env` file.
+
+Make sure you have the `.env` file in your project root with the following content:
+```bash
+DEEPINFRA_TOKEN=your-api-token-here
 ```
 
 ## Future Improvements
