@@ -81,4 +81,3 @@ DEEPINFRA_TOKEN=your-api-token-here
 
 - Add error handling for specific API failures.
 - Add support for more image generation models.
-- Allow the user to download generated images directly from the interface.
